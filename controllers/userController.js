@@ -1,7 +1,7 @@
 const ErrorHandler = require("../utils/errorhandler");
 const catchAsyncErrors=require("../middleware/catchAsyncErrors")
 const User=require("../models/userModels");
-const sendToken = require("../utils/jwttoken");
+const sendToken = require("../utils/jwtToken");
 const sendEmail=require("../utils/sendEmail")
 const crypto=require("crypto")
 const cloudinary=require("cloudinary")

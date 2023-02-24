@@ -10,12 +10,18 @@ const cloudinary=require("cloudinary")
 
 exports.registerUser=catchAsyncErrors(async(req,res,next)=>{
 
-    const myCloud=await cloudinary.v2.uploader.upload(req.body.avatar,{
+    let path=req.files.avatar.tempFilePath
+
+    console.log(path)
+
+    const myCloud=await cloudinary.v2.uploader.upload(path,{
         folder:"avatars",
         width:150,
         crop:"scale",
 
     })
+
+
 
     const { firstName, email, password }=req.body
 
@@ -27,9 +33,10 @@ exports.registerUser=catchAsyncErrors(async(req,res,next)=>{
         password,
         avatar:{
             public_id:myCloud.public_id,
-            url:myCloud.secure_url
+            url:myCloud.secure_url,
         }
     })
+
 
     sendToken(user,201,res)
 })

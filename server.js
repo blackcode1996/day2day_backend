@@ -1,6 +1,6 @@
 const app = require("./app");
-const connectDatabase = require("./config/db");
 const cloudinary=require("cloudinary")
+const connectDatabase = require("./config/db");
 const dotenv=require("dotenv")
 
 
@@ -24,6 +24,9 @@ cloudinary.config({
   api_key:process.env.CLOUDINARY_API_KEY,
   api_secret:process.env.CLOUDINARY_SECRET_KEY,
 })
+
+
+
 
 
 const server = app.listen(process.env.PORT, () => {

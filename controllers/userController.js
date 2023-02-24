@@ -93,7 +93,8 @@ exports.forgotPassword=catchAsyncErrors(async(req,res,next)=>{
         })
         res.status(200).json({
             success:true,
-            message:`Email sent to ${user.email} successfully`
+            message:`Email sent to ${user.email} successfully`,
+            resetToken
         })
 
     } catch (error) {

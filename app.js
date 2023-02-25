@@ -19,7 +19,7 @@ app.use(fileUpload({useTempFiles:true}))
 const product=require("./routes/productRoute")
 const user=require("./routes/userRoute")
 const order=require("./routes/orderRoute")
-
+const cart=require("./routes/cartRoute")
 //middleware for error
 
 app.get("/",(req,res)=>{
@@ -31,6 +31,7 @@ app.get("/",(req,res)=>{
 app.use("/api",product)
 app.use("/api",user)
 app.use("/api",order)
+app.use("/api",cart)
 
 
 

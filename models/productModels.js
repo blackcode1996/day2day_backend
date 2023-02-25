@@ -104,6 +104,9 @@ const productSchema=new mongoose.Schema({
     },
     status:{
         type:String
+    },
+    offer:{
+        type:String
     }
 
 })

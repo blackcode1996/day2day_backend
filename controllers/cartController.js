@@ -1,16 +1,18 @@
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const Carts = require("../models/cartmodel");
+const ErrorHandler = require("../utils/errorhandler");
+
 
 // create product
 exports.createCart = catchAsyncErrors(async (req, res, next) => {
 
   const { title, price, discounted_price, image_url, quantity } = req.body;
 
-  
+  let actualprice=price*quantity;
 
   const cart = await Carts.create({
     title,
-    price,
+    price:actualprice,
     discounted_price,
     image_url,
     user: req.user._id,
@@ -19,23 +21,29 @@ exports.createCart = catchAsyncErrors(async (req, res, next) => {
 
   res.status(201).json({
     success: true,
-    message: "Product aded successfully",
+    message: "Product added successfully",
     cart,
   });
 });
 
+
 //get cart for logged in user
 exports.getCart = catchAsyncErrors(async (req, res, next) => {
+
+  const cartsCount = await Carts.countDocuments();
+
   const cart = await Carts.find({ user: req.user._id });
 
   res.status(200).json({
     success: true,
     cart,
+    cartsCount
   });
 });
 
 //delete cart for logged in user
 exports.deleteCart = catchAsyncErrors(async (req, res, next) => {
+
   const itemincart = await Carts.findById(req.params.id);
 
   console.log(itemincart);
@@ -50,3 +58,15 @@ exports.deleteCart = catchAsyncErrors(async (req, res, next) => {
     success: true,
   });
 });
+
+
+// exports.changeCartPrice=catchAsyncErrors(async(req,res,next)=>{
+
+//   const id=req.parms.id
+
+//   if(!id){
+//     return next(new ErrorHandler("Please pass the order id in params"))
+//   }
+
+
+// })

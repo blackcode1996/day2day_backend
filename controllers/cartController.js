@@ -36,7 +36,7 @@ exports.getCart = catchAsyncErrors(async (req, res, next) => {
 
 //delete cart for logged in user
 exports.deleteCart = catchAsyncErrors(async (req, res, next) => {
-  const itemincart = await Cart.findById(req.params.id);
+  const itemincart = await Carts.findById(req.params.id);
 
   console.log(itemincart);
 

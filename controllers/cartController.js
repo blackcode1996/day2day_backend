@@ -26,7 +26,7 @@ exports.createCart = catchAsyncErrors(async (req, res, next) => {
 
 //get cart for logged in user
 exports.getCart = catchAsyncErrors(async (req, res, next) => {
-  const cart = await Cart.find({ user: req.user._id });
+  const cart = await Carts.find({ user: req.user._id });
 
   res.status(200).json({
     success: true,

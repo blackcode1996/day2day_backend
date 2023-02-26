@@ -25,7 +25,7 @@ exports.createCart = catchAsyncErrors(async (req, res, next) => {
 
 //get cart for logged in user
 exports.getCart = catchAsyncErrors(async (req, res, next) => {
-  
+
   const cart=await Cart.find({user:req.user._id})
 
   res.status(200).json({
@@ -33,3 +33,23 @@ exports.getCart = catchAsyncErrors(async (req, res, next) => {
     cart,
   });
 });
+
+
+//delete cart for logged in user
+exports.deleteCart=catchAsyncErrors(async(req,res,next)=>{
+
+  const itemincart=await Cart.findById(req.params.id)
+
+  console.log(itemincart)
+
+  if(!itemincart){
+    return next(new ErrorHandler("Order not found with this Id", 404));
+  }
+
+  await itemincart.remove()
+
+  res.status(200).json({
+    success: true,
+  });
+
+})

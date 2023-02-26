@@ -202,3 +202,67 @@
    "stock":100
   }
 ]
+
+
+
+
+
+
+[
+    {
+        "titile":"Hive Desk Caddy",
+        "description":"Elevate your monitor as well as your workstation experience with Mesa Monitor Stand! Your ultimate ally for productive working, it is a perfect coalition of design and function. It’s thoughtful design frees up valuable space on your desk and elevated height supports improved working posture, making it ergonomically friendly. Durable, matte-finish aluminium gives the stand design a clean modern expression to complement contemporary device designs. Natural oakwood tray softens the look and adds a warm feel while the colours bring the fun element.",
+        "category":"desk",
+        "sub_category":"FREE DUFFLE BAG / WALLET*",
+        "modal":"",
+        "details":[
+            {
+                "heading":"HIVE DESK CADDY",
+                "content":"A multi-utilitarian design that saves you from the hassle of organising your kid’s stationery, art supplies and more. Easy to organise, Hive is the perfect way to encourage them to be more self-reliant.",
+                "img_url":"https://images.dailyobjects.com/marche/feature-banner/hive-desk-caddys.jpg?tr=cm-pad_crop,v-2,w-768,h-614,dpr-1"
+            },
+            {
+                "heading":"CONVENIENT CARRY WITH CUTAWAY HANDLES",
+                "content":"Offering ultimate carry convenience, Caddy comes with cutaway handles making it truly portable. Thoughtfully structured, it is easy to lift and move from one place to another, even for the kids.",
+                "img_url":"https://images.dailyobjects.com/marche/feature-banner/hive-desk-caddys-1.jpg?tr=cm-pad_crop,v-2,w-768,h-614,dpr-1"
+            },
+            {
+                "heading":"INGENIOUS DESIGN AND CRAFTSMANSHIP",
+                "content":"Inspired to add colour, imaginative patterns and consequently wonder to your child’s indoor environment, this collection is handcrafted by experienced Indian artisans to deliver a pioneering kids indoor range. The collection features use of child-friendly and ergonomic shapes, cushioned and soft touch material, easy use and portability by kids to encourage independence and self-reliance among the little ones.",
+                "img_url":"https://images.dailyobjects.com/marche/feature-banner/hive-desk-caddys-2.jpg?tr=cm-pad_crop,v-2,w-768,h-614,dpr-1"
+            },
+            {
+                "heading":"GENEROUSLY SPACIOUS",
+                "content":"A smart catchall tray to keep hold of pens, pencils, highlighters, toys, crayons and what not! For the kids who are inundated with clutter all around, Hive is the ideal organising solution",
+                "img_url":"https://images.dailyobjects.com/marche/feature-banner/hive-desk-caddys-3.jpg?tr=cm-pad_crop,v-2,w-768,h-614,dpr-1"
+            },
+            {
+                "heading":"CAREFUL DIMENSIONS",
+                "content":"Ideal in terms of design and material, Hive’s standard dimensions allow you to place it on almost every place, be it a study desk or a shelf. Designed for children, it comes with soft, round corners offering additional safety.",
+                "img_url":"https://images.dailyobjects.com/marche/feature-banner/hive-desk-caddys-4.jpg?tr=cm-pad_crop,v-2,w-768,h-614,dpr-1"
+            }
+        ],
+        "color":"Black",
+        "images":[
+            {
+                " url":"https://images.dailyobjects.com/marche/product-images/1703/hive-desk-caddy-images/Hive-Desk-Caddy-vw.png?tr=cm-pad_resize,v-2,w-768,h-644,dpr-1"
+            },{
+                " url":"https://images.dailyobjects.com/marche/product-images/1703/hive-desk-caddy-images/Hive-Desk-Caddy-1.png?tr=cm-pad_resize,v-2,w-768,h-644,dpr-1"
+            },{
+                " url":"https://images.dailyobjects.com/marche/product-images/1703/hive-desk-caddy-images/Hive-Desk-Caddy-5t.jpg?tr=cm-pad_crop,v-2,w-768,h-644,dpr-1"
+            },{
+                " url":"https://images.dailyobjects.com/marche/product-images/1703/hive-desk-caddy-images/Hive-Desk-Caddy-6t.jpg?tr=cm-pad_crop,v-2,w-768,h-644,dpr-1"
+            },{
+                " url":"https://images.dailyobjects.com/marche/product-images/1703/hive-desk-caddy-images/Hive-Desk-Caddy-2n.png?tr=cm-pad_resize,v-2,w-768,h-644,dpr-1"
+            },{
+                " url":"https://images.dailyobjects.com/marche/product-images/1703/hive-desk-caddy-images/Hive-Desk-Caddy-3.png?tr=cm-pad_resize,v-2,w-768,h-644,dpr-1"
+            },{
+                " url":"https://images.dailyobjects.com/marche/product-images/1703/hive-desk-caddy-images/Hive-Desk-Caddy-4.png?tr=cm-pad_resize,v-2,w-768,h-644,dpr-1"
+            },{
+                " url":"https://images.dailyobjects.com/marche/product-images/1703/hive-desk-caddy-images/Hive-Desk-Caddy-8t.jpg?tr=cm-pad_crop,v-2,w-768,h-644,dpr-1"
+            }
+        ],
+        "price":3499,
+       "discounted_price":4999
+    }
+]

@@ -5,6 +5,7 @@ const { isAutheticatedUser } = require("../middleware/auth")
 const router=express.Router()
 
 router.route("/cart/create").post(isAutheticatedUser,createCart)
-// router.route("/cart/me").get(getCart)
+
+router.route("/cart/me").get(isAutheticatedUser,getCart)
 
 module.exports=router

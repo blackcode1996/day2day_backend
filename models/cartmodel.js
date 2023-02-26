@@ -5,7 +5,8 @@ const cartSchema = new mongoose.Schema({
   price:{type:Number,required:true},
   discounted_price:{type: Number, required: true },
   image_url:{type:String,required:true},
-  user:{type:String,required:true}
+  user:{type:String,required:true},
+  quantity:{type:Number,required:true}
 })
 
 module.exports= mongoose.model("cart", cartSchema);

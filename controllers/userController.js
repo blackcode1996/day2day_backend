@@ -81,7 +81,7 @@ exports.forgotPassword=catchAsyncErrors(async(req,res,next)=>{
 
     await user.save({validateBeforeSave:false})
 
-    const resetPasswordurl=`https://showy-animal-7694.vercel.app/resetpassword`
+    const resetPasswordurl=`https://showy-animal-7694.vercel.app/resetpassword/${resetToken}`
 
     // const resetPasswordurl=`${req.protocol}:/${req.get("host")}/api/password/reset/${resetToken}`
 

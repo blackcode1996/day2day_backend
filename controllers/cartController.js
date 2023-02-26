@@ -1,20 +1,21 @@
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
-const Cart = require("../models/cartmodel");
+const Carts = require("../models/cartmodel");
 
 // create product
 exports.createCart = catchAsyncErrors(async (req, res, next) => {
+
   const { title, price, discounted_price, image_url, quantity } = req.body;
 
-  const cart = {
+  
+
+  const cart = await Carts.create({
     title,
     price,
     discounted_price,
     image_url,
     user: req.user._id,
-    quantity,
-  };
-
-  // const cart=await Cart.create(req.body)
+    quantity
+  });
 
   res.status(201).json({
     success: true,
@@ -25,8 +26,7 @@ exports.createCart = catchAsyncErrors(async (req, res, next) => {
 
 //get cart for logged in user
 exports.getCart = catchAsyncErrors(async (req, res, next) => {
-
-  const cart=await Cart.find({user:req.user._id})
+  const cart = await Cart.find({ user: req.user._id });
 
   res.status(200).json({
     success: true,
@@ -34,22 +34,19 @@ exports.getCart = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
-
 //delete cart for logged in user
-exports.deleteCart=catchAsyncErrors(async(req,res,next)=>{
+exports.deleteCart = catchAsyncErrors(async (req, res, next) => {
+  const itemincart = await Cart.findById(req.params.id);
 
-  const itemincart=await Cart.findById(req.params.id)
+  console.log(itemincart);
 
-  console.log(itemincart)
-
-  if(!itemincart){
+  if (!itemincart) {
     return next(new ErrorHandler("Order not found with this Id", 404));
   }
 
-  await itemincart.remove()
+  await itemincart.remove();
 
   res.status(200).json({
     success: true,
   });
-
-})
+});

@@ -6,7 +6,6 @@ const cloudinary = require("cloudinary");
 
 //Create Product--admin
 exports.createProduct = catchAsyncErrors(async (req, res, next) => {
- 
   // req.body.images = allimages;
   // req.body.user = req.user.id;
 
@@ -16,7 +15,7 @@ exports.createProduct = catchAsyncErrors(async (req, res, next) => {
     success: true,
     product,
   });
-})
+});
 
 //get all products
 exports.getAllProducts = catchAsyncErrors(async (req, res) => {
@@ -59,22 +58,37 @@ exports.getProductDetails = catchAsyncErrors(async (req, res, next) => {
 
 //update Product--Admin
 exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
+  const id = req.params.id;
 
-  let product = Product.findById(req.params.id);
+  const payload = req.body;
 
+  // let product = Product.findById(req.params.id);
 
-  if (!product) {
-    return next(new ErrorHandler("product not found", 404));
+  try {
+    await Product.findByIdAndUpdate({ _id: id }, payload);
+    res.send({ msg: `note with id:${id} has been updated` });
+  } catch (err) {
+    console.log(err);
   }
 
+  // product = await Product.findByIdAndUpdate(req.params.id, req.body);
 
- let updateProduct = await Product.findByIdAndUpdate(req.params.id, req.body);
-
-  res.status(200).json({
-    success: true,
-    updateProduct,
-  });
+  // res.status(200).json({
+  //   success: true,
+  //   product,
+  // });
 });
+
+// productRoute.patch('/update/:id', async (req, res) => {
+//   const id = req.params.id
+//   const payload = req.body
+//   try {
+//       await ProductModel.findByIdAndUpdate({ _id: id }, payload)
+//       res.send({ "msg": `note with id:${id} has been updated` })
+//   } catch (err) {
+//       console.log(err)
+//   }
+// })
 
 //Delete product
 exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
@@ -83,11 +97,6 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
   if (!product) {
     return next(new ErrorHandler("product not found", 404));
   }
-
-  // //deleting images from cloudinary
-  // for (let i = 0; i < product.images.length; i++) {
-  //   await cloudinary.v2.uploader.destroy(product.images[i].public_id);
-  // }
 
   await product.remove();
 

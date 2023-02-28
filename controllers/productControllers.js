@@ -59,18 +59,20 @@ exports.getProductDetails = catchAsyncErrors(async (req, res, next) => {
 
 //update Product--Admin
 exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
+
   let product = Product.findById(req.params.id);
+
 
   if (!product) {
     return next(new ErrorHandler("product not found", 404));
   }
 
 
-  product = await Product.findByIdAndUpdate(req.params.id, req.body);
+ let updateProduct = await Product.findByIdAndUpdate(req.params.id, req.body);
 
   res.status(200).json({
     success: true,
-    product,
+    updateProduct,
   });
 });
 

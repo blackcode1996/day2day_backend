@@ -6,8 +6,6 @@ const User = require("../models/userModels")
 
 exports.isAutheticatedUser= catchAsyncErrors(async(req,res,next)=>{
     
-
-
 const token=req.headers.authorization
 
     if(!token){
@@ -19,7 +17,6 @@ const token=req.headers.authorization
     req.user=await User.findById(decodedData.id);
 
     next()
-
 
 })
 
